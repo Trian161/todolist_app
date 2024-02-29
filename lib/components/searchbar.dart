@@ -13,8 +13,8 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(14),
-          margin: EdgeInsets.symmetric(horizontal: 30),
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+          margin: EdgeInsets.symmetric(horizontal: 40),
           decoration: BoxDecoration(
               color: Color(0xffd6b4fc),
               borderRadius: BorderRadius.circular(20)),

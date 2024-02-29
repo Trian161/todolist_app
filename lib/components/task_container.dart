@@ -17,8 +17,8 @@ class _TaskContainerState extends State<TaskContainer> {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 40),
-              height: 45,
+              margin: const EdgeInsets.symmetric(horizontal: 50),
+              height: 40,
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 232, 212, 255),
                 borderRadius: BorderRadius.vertical(
@@ -46,6 +46,83 @@ class _TaskContainerState extends State<TaskContainer> {
                     text: 'Tomorrow',
                   ),
                 ],
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 5),
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 25),
+                  decoration: const BoxDecoration(
+                      color: Color(0xffd6b4fc),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(30))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: TabBarView(
+                      children: [
+                        Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Today Task',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ),
+                                Image.asset('lib/images/Slider.png')
+                              ],
+                            ),
+                            SizedBox(
+                              height: 50,
+                            ),
+                            Text(
+                              'You don\'t \nhave a \ntask today',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Tomorrow Task',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ),
+                                Image.asset('lib/images/Slider.png')
+                              ],
+                            ),
+                            SizedBox(
+                              height: 50,
+                            ),
+                            Text(
+                              'You don\'t \nhave a \ntask tomorrow',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             )
           ],

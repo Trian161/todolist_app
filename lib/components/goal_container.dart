@@ -15,19 +15,19 @@ class _GoalContainerState extends State<GoalContainer> {
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 30),
-            height: 235,
+            margin: const EdgeInsets.symmetric(horizontal: 40),
+            height: 225,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: const Color(0xffffd700),
             ),
             child: const Padding(
-              padding: EdgeInsets.all(18),
+              padding: EdgeInsets.all(16),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'My Goals',
@@ -45,9 +45,10 @@ class _GoalContainerState extends State<GoalContainer> {
                     height: 50,
                   ),
                   Text(
-                    'you don\'t have a goal now',
+                    'you don\'t \nhave a \ngoal now',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  )
+                  ),
                 ],
               ),
             ),

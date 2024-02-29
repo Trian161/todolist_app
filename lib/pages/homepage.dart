@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
           children: [
             SearchBarWidget(),
             GoalContainer(),
-            TaskContainer(),
+            Expanded(child: TaskContainer()),
           ],
         ),
       ),

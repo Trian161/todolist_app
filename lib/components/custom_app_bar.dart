@@ -5,16 +5,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(65.0);
+  Size get preferredSize => const Size.fromHeight(40.0);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       backgroundColor: Color(0xffffd700),
-      title: Padding(
-        padding: const EdgeInsets.only(top: 10),
-        child: Center(child: Text('To Do List')),
-      ),
+      title: Text('To Do List'),
       actions: [
         IconButton(
           onPressed: () {},
