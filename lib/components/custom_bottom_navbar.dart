@@ -59,8 +59,8 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
                 icon: Icon(Icons.task),
                 // padding: EdgeInsets.only(right: 30),
               ),
-              IconButton(
-                onPressed: () {},
+              const IconButton(
+                onPressed: null,
                 icon: Icon(null),
                 // padding: EdgeInsets.only(right: 30),
               ),
