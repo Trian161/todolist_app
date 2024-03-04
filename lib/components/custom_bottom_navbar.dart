@@ -36,7 +36,31 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffffd700),
         shape: CircleBorder(),
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              title: const Text('Choose Type'),
+              actionsAlignment: MainAxisAlignment.center,
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'Goal'),
+                  style: TextButton.styleFrom(
+                      backgroundColor: Color(0xffd6b4fc),
+                      textStyle: TextStyle(fontSize: 30)),
+                  child: Text('Goal'),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'Task'),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xffd6b4fc),
+                  ),
+                  child: Text('Task'),
+                ),
+              ],
+            ),
+          );
+        },
         child: const Icon(
           Icons.add,
           color: Colors.white,
