@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todolist_app/components/custom_bottom_navbar.dart';
 import 'package:todolist_app/pages/home.dart';
+import 'package:todolist_app/pages/task.dart';
 
 void main() {
   runApp(const MyApp());

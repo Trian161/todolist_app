@@ -10,22 +10,28 @@ class CustomBottomBar extends StatefulWidget {
 }
 
 class _CustomBottomBarState extends State<CustomBottomBar> {
-  List<Widget> _pages = [
-    Home(),
-    Task(),
-  ];
-  int _selectedIndex = 0;
+  PageController _pageController = PageController(initialPage: 0);
 
-  void _selectPage(int index) {
+  void _onTapped(index) {
     setState(() {
-      _selectedIndex = index;
+      _pageController.jumpToPage(index);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
+      extendBody: true,
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: (int) {
+          print('Page changes to index $int');
+        },
+        children: [
+          Home(),
+          Task(),
+        ],
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffffd700),
@@ -37,44 +43,44 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
           size: 50,
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Color(0xffd6b4fc),
-        ),
-        child: BottomAppBar(
-          height: kBottomNavigationBarHeight * 1.1,
-          color: Color(0xffffd700),
-          elevation: 0,
-          shape: CircularNotchedRectangle(),
-          notchMargin: 7,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.home),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.task),
-                // padding: EdgeInsets.only(right: 30),
-              ),
-              const IconButton(
-                onPressed: null,
-                icon: Icon(null),
-                // padding: EdgeInsets.only(right: 30),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.calendar_month_rounded),
-                // padding: EdgeInsets.only(left: 30),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.person),
-              ),
-            ],
-          ),
+      bottomNavigationBar: BottomAppBar(
+        height: kBottomNavigationBarHeight * 1.1,
+        color: Color(0xffffd700),
+        elevation: 0,
+        shape: CircularNotchedRectangle(),
+        notchMargin: 7,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              onPressed: () {
+                _onTapped(0);
+              },
+              icon: Icon(Icons.home),
+            ),
+            IconButton(
+              onPressed: () {
+                _onTapped(1);
+              },
+              icon: Icon(Icons.task),
+            ),
+            const IconButton(
+              onPressed: null,
+              icon: Icon(null),
+            ),
+            IconButton(
+              onPressed: () {
+                _onTapped(2);
+              },
+              icon: Icon(Icons.calendar_month_rounded),
+            ),
+            IconButton(
+              onPressed: () {
+                _onTapped(3);
+              },
+              icon: Icon(Icons.person),
+            ),
+          ],
         ),
       ),
     );
