@@ -38,28 +38,90 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         shape: CircleBorder(),
         onPressed: () {
           showDialog(
-            context: context,
-            builder: (ctx) => AlertDialog(
-              title: const Text('Choose Type'),
-              actionsAlignment: MainAxisAlignment.center,
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () => Navigator.pop(context, 'Goal'),
-                  style: TextButton.styleFrom(
-                      backgroundColor: Color(0xffd6b4fc),
-                      textStyle: TextStyle(fontSize: 30)),
-                  child: Text('Goal'),
-                ),
-                TextButton(
-                  onPressed: () => Navigator.pop(context, 'Task'),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Color(0xffd6b4fc),
+              context: context,
+              builder: (BuildContext context) {
+                return Dialog(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Text('Task'),
-                ),
-              ],
-            ),
-          );
+                  child: Container(
+                      height: 150,
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment(1.05, -1.20),
+                            child: InkWell(
+                              onTap: () {},
+                              child: Container(
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(14),
+                                  border: Border.all(color: Colors.black),
+                                ),
+                                child: Icon(Icons.close),
+                              ),
+                            ),
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            // crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 16),
+                                child: Text(
+                                  'Choose Type',
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 100,
+                                    height: 50,
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        'Task',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xffd6b4fc),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    width: 100,
+                                    height: 50,
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        'Goal',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 20),
+                                      ),
+                                      style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xffffd700),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                );
+              });
         },
         child: const Icon(
           Icons.add,
