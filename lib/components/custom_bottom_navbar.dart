@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todolist_app/components/task_form.dart';
 import 'package:todolist_app/pages/home.dart';
 import 'package:todolist_app/pages/task.dart';
 
@@ -16,6 +17,18 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     setState(() {
       _pageController.jumpToPage(index);
     });
+  }
+
+  void _showDialogForm(BuildContext context, var val) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            clipBehavior: Clip.antiAlias,
+            backgroundColor: Colors.white,
+            child: val,
+          );
+        });
   }
 
   @override
@@ -51,7 +64,9 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
                           Align(
                             alignment: Alignment(1.05, -1.20),
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
                               child: Container(
                                 padding: EdgeInsets.all(2),
                                 decoration: BoxDecoration(
@@ -83,7 +98,9 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
                                     width: 100,
                                     height: 50,
                                     child: TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        _showDialogForm(context, TaskForm());
+                                      },
                                       child: Text(
                                         'Task',
                                         style: TextStyle(
