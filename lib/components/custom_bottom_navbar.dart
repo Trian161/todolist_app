@@ -24,6 +24,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         context: context,
         builder: (BuildContext context) {
           return Dialog(
+            insetPadding: EdgeInsets.all(20),
             clipBehavior: Clip.antiAlias,
             backgroundColor: Colors.white,
             child: val,
