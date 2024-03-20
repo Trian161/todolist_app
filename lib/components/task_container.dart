@@ -61,63 +61,69 @@ class _TaskContainerState extends State<TaskContainer> {
                     padding: const EdgeInsets.all(16),
                     child: TabBarView(
                       children: [
-                        Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Today Task',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    decoration: TextDecoration.underline,
+                        SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Today Task',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      decoration: TextDecoration.underline,
+                                    ),
                                   ),
-                                ),
-                                Image.asset('lib/images/Slider.png')
-                              ],
-                            ),
-                            SizedBox(
-                              height: 50,
-                            ),
-                            Text(
-                              'You don\'t \nhave a \ntask today',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
+                                  Image.asset('lib/images/Slider.png')
+                                ],
                               ),
-                            )
-                          ],
+                              SizedBox(
+                                height: 50,
+                              ),
+                              Text(
+                                'You don\'t \nhave a \ntask today',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                        Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Tomorrow Task',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    decoration: TextDecoration.underline,
+                        SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Tomorrow Task',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      decoration: TextDecoration.underline,
+                                    ),
                                   ),
-                                ),
-                                Image.asset('lib/images/Slider.png')
-                              ],
-                            ),
-                            SizedBox(
-                              height: 50,
-                            ),
-                            Text(
-                              'You don\'t \nhave a \ntask tomorrow',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
+                                  Image.asset('lib/images/Slider.png')
+                                ],
                               ),
-                            )
-                          ],
+                              SizedBox(
+                                height: 50,
+                              ),
+                              Text(
+                                'You don\'t \nhave a \ntask tomorrow',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),
