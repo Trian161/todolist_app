@@ -22,12 +22,42 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
   void _showDialogForm(BuildContext context, var val) {
     showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (BuildContext context) {
-          return Dialog(
-            insetPadding: EdgeInsets.all(20),
-            clipBehavior: Clip.antiAlias,
-            backgroundColor: Colors.white,
-            child: val,
+          return SingleChildScrollView(
+            child: Dialog(
+              insetPadding: EdgeInsets.all(20),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Container(
+                  child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.black),
+                        ),
+                        child: Icon(Icons.close),
+                      ),
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [val],
+                  ),
+                ],
+              )),
+            ),
           );
         });
   }
@@ -53,6 +83,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         onPressed: () {
           showDialog(
               context: context,
+              barrierDismissible: false,
               builder: (BuildContext context) {
                 return Dialog(
                   shape: RoundedRectangleBorder(
@@ -63,7 +94,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
                       child: Stack(
                         children: [
                           Align(
-                            alignment: Alignment(1.05, -1.20),
+                            alignment: Alignment(1.02, -1.10),
                             child: InkWell(
                               onTap: () {
                                 Navigator.of(context).pop();
