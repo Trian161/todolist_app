@@ -70,7 +70,7 @@ class _TaskFormState extends State<TaskForm> {
                 ),
                 Expanded(
                   child: Container(
-                    height: 40,
+                    height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
@@ -85,8 +85,7 @@ class _TaskFormState extends State<TaskForm> {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'title',
-                        contentPadding:
-                            EdgeInsets.only(left: 15, top: 10, bottom: 10),
+                        contentPadding: EdgeInsets.only(left: 15, bottom: 10),
                       ),
                     ),
                   ),
@@ -224,7 +223,7 @@ class _TaskFormState extends State<TaskForm> {
                             height: 5,
                           ),
                           Container(
-                            height: 40,
+                            height: 30,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
@@ -239,8 +238,8 @@ class _TaskFormState extends State<TaskForm> {
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'dd/mm/yy',
-                                contentPadding: EdgeInsets.only(
-                                    left: 30, top: 5, bottom: 10),
+                                contentPadding:
+                                    EdgeInsets.only(left: 30, bottom: 10),
                               ),
                             ),
                           ),
@@ -263,7 +262,7 @@ class _TaskFormState extends State<TaskForm> {
                             height: 5,
                           ),
                           Container(
-                            height: 40,
+                            height: 30,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
@@ -278,8 +277,8 @@ class _TaskFormState extends State<TaskForm> {
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: '00:00',
-                                contentPadding: EdgeInsets.only(
-                                    left: 50, top: 5, bottom: 10),
+                                contentPadding:
+                                    EdgeInsets.only(left: 50, bottom: 10),
                               ),
                             ),
                           ),
@@ -310,7 +309,7 @@ class _TaskFormState extends State<TaskForm> {
                               border: Border.all(
                                   color: Color(0xffd6b4fc), width: 3),
                               borderRadius: BorderRadius.circular(30)),
-                          height: 40,
+                          height: 30,
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton(
                                 icon: Icon(
