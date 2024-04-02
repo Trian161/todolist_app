@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todolist_app/components/goal_form.dart';
 import 'package:todolist_app/components/task_form.dart';
 import 'package:todolist_app/pages/home.dart';
 import 'package:todolist_app/pages/task.dart';
@@ -152,7 +153,9 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
                                     width: 100,
                                     height: 50,
                                     child: TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        _showDialogForm(context, GoalForm());
+                                      },
                                       child: Text(
                                         'Goal',
                                         style: TextStyle(
